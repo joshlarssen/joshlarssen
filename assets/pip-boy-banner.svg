@@ -1,0 +1,65 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06110A"/>
+      <stop offset="1" stop-color="#08150D"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#9CFF77"/>
+      <stop offset="1" stop-color="#39FF14"/>
+    </linearGradient>
+    <pattern id="scanlines" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="4" fill="rgba(255,255,255,0.02)"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="10" y="10" width="1180" height="300" rx="18" fill="url(#bg)" stroke="#67FF4E" stroke-width="2"/>
+  <rect x="24" y="24" width="1152" height="272" rx="14" fill="#07150C" stroke="#1F5C27" stroke-width="1.5"/>
+  <rect x="24" y="24" width="1152" height="272" rx="14" fill="url(#scanlines)" opacity="0.55"/>
+
+  <path d="M32 72H1168" stroke="#184923" stroke-width="1"/>
+  <path d="M32 248H1168" stroke="#184923" stroke-width="1"/>
+  <path d="M392 38V282" stroke="#184923" stroke-width="1"/>
+  <path d="M809 38V282" stroke="#184923" stroke-width="1"/>
+
+  <circle cx="210" cy="160" r="92" stroke="#39FF14" stroke-width="3" opacity="0.9"/>
+  <circle cx="210" cy="160" r="68" stroke="#39FF14" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="210" cy="160" r="44" stroke="#39FF14" stroke-width="1" opacity="0.4"/>
+  <path d="M118 160H302" stroke="#39FF14" stroke-width="1.5" opacity="0.8"/>
+  <path d="M210 68V252" stroke="#39FF14" stroke-width="1.5" opacity="0.8"/>
+  <path d="M210 160L278 108" stroke="#9CFF77" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="278" cy="108" r="5" fill="#B8FF87" filter="url(#glow)"/>
+  <path d="M210 160L315 160" stroke="#39FF14" stroke-width="1" opacity="0.25"/>
+  <path d="M210 160L143 225" stroke="#39FF14" stroke-width="1" opacity="0.25"/>
+
+  <text x="86" y="274" fill="#9CFF77" font-family="monospace" font-size="15">SCAN // QUALITY // DELIVERY</text>
+
+  <text x="430" y="76" fill="#B8FF87" font-family="monospace" font-size="18">PIP-BOY INSPIRED PROFILE // ONLINE</text>
+  <text x="430" y="124" fill="#39FF14" font-family="monospace" font-size="38" font-weight="700" filter="url(#glow)">DENIS MAHMUTOVIC</text>
+  <text x="430" y="160" fill="#A7FF8F" font-family="monospace" font-size="20">QA AUTOMATION ENGINEER // DEVOPS-MINDED BUILDER</text>
+  <text x="430" y="194" fill="#7CFF66" font-family="monospace" font-size="17">PYTHON  JAVASCRIPT  CI/CD  CLOUD  TOOLING</text>
+  <text x="430" y="236" fill="#5BE34C" font-family="monospace" font-size="15">BUILDING RELIABLE SYSTEMS, TEST INFRASTRUCTURE AND SIDE PROJECTS</text>
+
+  <rect x="838" y="62" width="292" height="60" rx="8" fill="#0C1D12" stroke="#2A7A36"/>
+  <rect x="838" y="132" width="292" height="60" rx="8" fill="#0C1D12" stroke="#2A7A36"/>
+  <rect x="838" y="202" width="292" height="60" rx="8" fill="#0C1D12" stroke="#2A7A36"/>
+
+  <text x="858" y="84" fill="#8CFF79" font-family="monospace" font-size="13">STATUS</text>
+  <text x="858" y="108" fill="#39FF14" font-family="monospace" font-size="22" font-weight="700">ONLINE</text>
+
+  <text x="858" y="154" fill="#8CFF79" font-family="monospace" font-size="13">LOCATION</text>
+  <text x="858" y="178" fill="#39FF14" font-family="monospace" font-size="22" font-weight="700">CLUSES, FR</text>
+
+  <text x="858" y="224" fill="#8CFF79" font-family="monospace" font-size="13">SPECIALIZATION</text>
+  <text x="858" y="248" fill="#39FF14" font-family="monospace" font-size="20" font-weight="700">QA x DEVOPS</text>
+
+  <text x="38" y="48" fill="#7CFF66" font-family="monospace" font-size="13">BOOT SEQUENCE 2.1</text>
+  <text x="1014" y="48" fill="#7CFF66" font-family="monospace" font-size="13">VAULT-ID // JOSHLARSSEN</text>
+</svg>
