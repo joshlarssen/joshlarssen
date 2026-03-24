@@ -281,6 +281,16 @@
         max-width: 430px;
       }
 
+      .signal-label {
+        margin-top: 14px;
+        padding: 8px 12px;
+        border: 1px solid #2f9134;
+        color: #6dff55;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 14px;
+      }
+
       .dock {
         display: grid;
         grid-template-columns: 1.15fr 0.85fr;
@@ -332,6 +342,165 @@
         background: rgba(7, 18, 8, 0.9);
         color: #9dff7b;
         font-size: 16px;
+      }
+
+      .operator-figure {
+        position: relative;
+        width: 210px;
+        height: 230px;
+        filter: drop-shadow(0 0 18px rgba(109, 255, 85, 0.2));
+      }
+
+      .operator-halo {
+        position: absolute;
+        inset: 20px 18px 8px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(109, 255, 85, 0.18) 0%, rgba(109, 255, 85, 0.02) 62%, transparent 76%);
+      }
+
+      .operator-head,
+      .operator-torso,
+      .operator-arm,
+      .operator-leg {
+        position: absolute;
+        background: linear-gradient(180deg, rgba(190, 255, 177, 0.96), rgba(109, 255, 85, 0.86));
+        border: 2px solid rgba(109, 255, 85, 0.9);
+        box-shadow: 0 0 20px rgba(109, 255, 85, 0.12);
+      }
+
+      .operator-head {
+        left: 74px;
+        top: 24px;
+        width: 62px;
+        height: 66px;
+        border-radius: 34px 34px 30px 30px;
+      }
+
+      .operator-hair {
+        position: absolute;
+        left: 5px;
+        top: -10px;
+        width: 52px;
+        height: 22px;
+        border-radius: 18px 18px 8px 12px;
+        border: 2px solid rgba(109, 255, 85, 0.95);
+        border-bottom: none;
+        transform: rotate(-6deg);
+      }
+
+      .operator-hair::before,
+      .operator-hair::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 16px;
+        height: 14px;
+        border-top: 2px solid rgba(109, 255, 85, 0.95);
+        border-radius: 10px 10px 0 0;
+      }
+
+      .operator-hair::before {
+        left: 7px;
+        transform: rotate(-10deg);
+      }
+
+      .operator-hair::after {
+        right: 4px;
+        transform: rotate(12deg);
+      }
+
+      .operator-eye {
+        position: absolute;
+        top: 24px;
+        width: 7px;
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(6, 18, 7, 0.88);
+      }
+
+      .eye-left {
+        left: 17px;
+      }
+
+      .eye-right {
+        right: 17px;
+      }
+
+      .operator-smile {
+        position: absolute;
+        left: 19px;
+        bottom: 14px;
+        width: 24px;
+        height: 12px;
+        border-bottom: 3px solid rgba(6, 18, 7, 0.88);
+        border-radius: 0 0 18px 18px;
+      }
+
+      .operator-torso {
+        left: 72px;
+        top: 92px;
+        width: 66px;
+        height: 78px;
+        border-radius: 18px 18px 16px 16px;
+      }
+
+      .operator-torso::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        bottom: 10px;
+        width: 3px;
+        transform: translateX(-50%);
+        background: rgba(6, 18, 7, 0.22);
+        border-radius: 999px;
+      }
+
+      .operator-arm {
+        top: 102px;
+        width: 28px;
+        height: 72px;
+        border-radius: 14px;
+      }
+
+      .arm-left {
+        left: 48px;
+        transform: rotate(28deg);
+      }
+
+      .arm-right {
+        right: 48px;
+        transform: rotate(-28deg);
+      }
+
+      .arm-right::after {
+        content: "";
+        position: absolute;
+        right: -12px;
+        bottom: 8px;
+        width: 18px;
+        height: 18px;
+        border: 3px solid rgba(109, 255, 85, 0.95);
+        border-left: none;
+        border-top: none;
+        border-radius: 0 0 12px 0;
+      }
+
+      .operator-leg {
+        top: 164px;
+        width: 30px;
+        height: 62px;
+        border-radius: 14px 14px 12px 12px;
+      }
+
+      .leg-left {
+        left: 78px;
+        transform: rotate(8deg);
+      }
+
+      .leg-right {
+        right: 78px;
+        transform: rotate(-8deg);
       }
 
       .footer {
@@ -424,15 +593,25 @@
             </div>
 
             <div class="panel-body">
-              <div class="radar-shell">
-                <div class="radar">
-                  <div class="radar-ring"></div>
-                  <div class="radar-ring inner"></div>
-                  <div class="radar-line horizontal"></div>
-                  <div class="radar-line vertical"></div>
-                  <div class="radar-core">py</div>
-                </div>
-              </div>
+              
+    <div class="radar-shell">
+      <div class="operator-figure">
+        <div class="operator-halo"></div>
+        <div class="operator-head">
+          <span class="operator-hair"></span>
+          <span class="operator-eye eye-left"></span>
+          <span class="operator-eye eye-right"></span>
+          <span class="operator-smile"></span>
+        </div>
+        <div class="operator-torso"></div>
+        <div class="operator-arm arm-left"></div>
+        <div class="operator-arm arm-right"></div>
+        <div class="operator-leg leg-left"></div>
+        <div class="operator-leg leg-right"></div>
+      </div>
+      <div class="signal-label">python</div>
+    </div>
+  
 
               <div>
                 <p class="panel-copy">My default tool for test automation, quality tooling, scripts and the practical glue that keeps delivery moving.</p>
