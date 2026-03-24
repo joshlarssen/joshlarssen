@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/terminal-screen.svg" alt="Retro terminal inspired profile screen for Denis Mahmutovic" width="100%" />
+  <img src="./assets/profile-static.svg" alt="Retro terminal inspired profile screen for Denis Mahmutovic" width="100%" />
 </p>
 
 <p align="center">
