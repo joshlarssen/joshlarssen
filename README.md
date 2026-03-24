@@ -13,31 +13,29 @@
 > booting vault profile...
 > user: Denis Mahmutovic
 > class: QA Automation Engineer / DevOps-minded builder
-> objective: build resilient test systems, delivery pipelines and sharp side projects
+> objective: build reliable tooling, cleaner pipelines and useful projects
 ```
 
 <table>
   <tr>
     <td valign="top" width="50%">
 
-## `STATUS`
+## `CURRENT FOCUS`
 
-- `5+ years` in QA automation and software quality
-- `3,500+` automated tests across `7` applications
-- `20+` CI/CD pipelines maintained and improved
-- Building robust tooling for IoT product validation
-- Moving toward a stronger `QA x DevOps` hybrid profile
+- QA automation for real products
+- DevOps-minded delivery workflows
+- Python and JavaScript tooling
+- More public open-source work coming
 
    </td>
     <td valign="top" width="50%">
 
-## `PERKS`
+## `SIGNAL`
 
-- `ISTQB CTFL`
-- `ISTQB Advanced Test Automation Engineer`
-- `Python`, `JavaScript`, `C`, `C++`
-- `Behave`, `Pytest`, `Jenkins`, `Docker`, `Kubernetes`
-- `Nuxt`, `Tauri`, `Azure`, `Git`, `SonarQube`
+- `5+ years` in QA
+- `3,500+` automated tests
+- `20+` CI/CD pipelines
+- `ISTQB CTFL` + `Advanced TAE`
 
    </td>
   </tr>
@@ -46,14 +44,6 @@
 <p align="center">
   <img src="./assets/pip-boy-panel.svg" alt="Pip-Boy inspired engineering stats panel" width="100%" />
 </p>
-
-## `QUEST LOG`
-
-- [x] Build reliable automation stacks for real products
-- [x] Wire tests directly into CI/CD feedback loops
-- [x] Support teams with tooling, quality practices and platform workflows
-- [ ] Push more public open-source work into the profile
-- [ ] Ship more polished tools with a stronger product feel
 
 ## `LOADOUT`
 
@@ -70,24 +60,11 @@
 
 ### [`behave-toolkit`](https://github.com/joshlarssen/behave-toolkit)
 
-> A Python toolkit that extends the `Behave` testing workflow with practical quality-of-life features.
+> Python toolkit extending the `Behave` testing workflow.
 
 ### `GestureSnap`
 
-> Gesture-based shortcut launcher built with `Nuxt 4`, `TypeScript`, `Tauri 2`, and `Rust`.
-
-### `Somfy automation work`
-
-> Designed and scaled a Python-based automated validation environment that improved release confidence and accelerated feedback for connected products.
-
-## `CAREER LOG`
-
-```text
-[ SOMFY ]         QA Automation Engineer
-[ AZURE/JENKINS ] Backup DevOps responsibilities
-[ INSA LYON ]     Telecom engineering background
-[ OPEN SOURCE ]   More public builds loading soon...
-```
+> Gesture-based shortcut launcher with `Nuxt`, `TypeScript`, `Tauri`, and `Rust`.
 
 ## `SYSTEM METRICS`
 
@@ -99,5 +76,5 @@
 ```console
 > signal stable
 > profile theme: vault terminal / soft radiation green
-> next upgrade: more public projects + CV uplink
+> next upgrade: more public projects
 ```
