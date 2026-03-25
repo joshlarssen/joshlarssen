@@ -10,6 +10,12 @@
             <style><![CDATA[
         :root {
   color-scheme: dark;
+  --shell-width: 1136px;
+  --shell-height: 876px;
+  --topbar-height: 112px;
+  --screen-height: 534px;
+  --dock-height: 176px;
+  --footer-height: 54px;
   --bg-start: #030603;
   --bg-end: #050b05;
   --panel: rgba(7, 19, 9, 0.94);
@@ -55,7 +61,8 @@ body {
 }
 
 .shell {
-  max-width: 1240px;
+  width: min(100%, var(--shell-width));
+  max-width: var(--shell-width);
   margin: 0 auto;
   padding: 28px 18px 40px;
 }
@@ -70,10 +77,11 @@ body {
 }
 
 .topbar {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 18px;
-  justify-content: space-between;
   align-items: center;
+  height: var(--topbar-height);
   padding: 18px 22px;
   border-radius: 18px 18px 0 0;
 }
@@ -82,6 +90,11 @@ body {
   display: flex;
   gap: 14px;
   align-items: center;
+  min-width: 0;
+}
+
+.brand > div {
+  min-width: 0;
 }
 
 .brand-led {
@@ -109,15 +122,25 @@ body {
 }
 
 .brand-title {
-  font-size: clamp(1.7rem, 3vw, 2rem);
-  text-transform: lowercase;
+  max-width: 100%;
+  font-size: clamp(1.15rem, 2.1vw, 1.72rem);
+  line-height: 1.15;
 }
 
 .module-tabs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
   justify-content: flex-end;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.module-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .tab-button,
@@ -133,9 +156,11 @@ body {
 }
 
 .tab-button {
+  flex: 0 0 auto;
   padding: 10px 14px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
+  white-space: nowrap;
 }
 
 .tab-button:hover,
@@ -156,6 +181,7 @@ body {
   display: grid;
   grid-template-columns: minmax(250px, 320px) minmax(0, 1fr);
   gap: 18px;
+  height: var(--screen-height);
   padding: 18px;
   border-top: none;
 }
@@ -167,16 +193,22 @@ body {
 }
 
 .sidebar {
+  min-height: 0;
   padding: 18px;
   background:
     linear-gradient(180deg, rgba(15, 31, 16, 0.76), rgba(5, 13, 6, 0.92)),
     linear-gradient(180deg, transparent, rgba(109, 255, 85, 0.04));
+  overflow: hidden;
 }
 
 .item-list {
   display: grid;
   gap: 10px;
   margin-top: 18px;
+  max-height: calc(100% - 56px);
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
 }
 
 .item-button {
@@ -197,11 +229,12 @@ body {
 }
 
 .panel-frame {
-  min-height: 100%;
+  height: 100%;
   padding: 22px;
   background:
     linear-gradient(180deg, rgba(8, 18, 8, 0.94), rgba(3, 8, 4, 0.97)),
     linear-gradient(90deg, transparent, rgba(109, 255, 85, 0.03), transparent);
+  overflow: hidden;
 }
 
 .panel-meta {
@@ -237,12 +270,20 @@ body {
 
 .panel-body {
   margin-top: 28px;
+  height: calc(100% - 118px);
 }
 
 .panel-copy {
   margin: 0;
   max-width: 52rem;
   font-size: 1.02rem;
+}
+
+.detail-block {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 6px;
+  scrollbar-width: thin;
 }
 
 .panel-bullets {
@@ -256,6 +297,7 @@ body {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 18px;
+  height: var(--dock-height);
   margin-top: 18px;
   padding: 18px 20px;
   border-top: none;
@@ -263,12 +305,13 @@ body {
 
 .signal-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(var(--signal-count, 1), minmax(0, 1fr));
   gap: 12px;
   margin-top: 12px;
 }
 
 .signal-card {
+  min-width: 0;
   padding: 14px;
   border: 1px solid var(--line-soft);
   background: rgba(8, 18, 8, 0.72);
@@ -288,13 +331,22 @@ body {
 
 .link-pills {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
   margin-top: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.link-pills::-webkit-scrollbar {
+  display: none;
 }
 
 .link-pill {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 8px;
   padding: 10px 12px;
@@ -304,6 +356,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  min-height: var(--footer-height);
   padding: 12px 18px;
   border-top: none;
   border-radius: 0 0 18px 18px;
@@ -315,11 +368,19 @@ body {
 }
 
 @media (max-width: 960px) {
+  :root {
+    --topbar-height: auto;
+    --screen-height: auto;
+    --dock-height: auto;
+    --footer-height: auto;
+  }
+
   .topbar,
   .screen,
   .dock {
     display: grid;
     grid-template-columns: 1fr;
+    height: auto;
   }
 
   .module-tabs {
@@ -328,6 +389,23 @@ body {
 
   .panel-meta {
     display: grid;
+  }
+
+  .item-list,
+  .detail-block {
+    max-height: none;
+    height: auto;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .link-pills {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+
+  .signal-cards {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   }
 }
 
@@ -389,8 +467,8 @@ body {
                   <div class="brand">
                     <span class="brand-led"></span>
                     <div>
-                      <p class="brand-kicker">interactive profile</p>
-                      <h1 class="brand-title">retro terminal</h1>
+                      <p class="brand-kicker">My Profile</p>
+                      <h1 class="brand-title">Denis Mahmutovic - QA Automation Engineer</h1>
                     </div>
                   </div>
 
@@ -416,18 +494,23 @@ body {
                 </div>
               
                 <div class="item-button">
-                  <span>docker</span>
+                  <span>Nuxt</span>
                   <span class="item-button__index">03</span>
                 </div>
               
                 <div class="item-button">
-                  <span>kubernetes</span>
+                  <span>docker</span>
                   <span class="item-button__index">04</span>
                 </div>
               
                 <div class="item-button">
-                  <span>jenkins</span>
+                  <span>kubernetes</span>
                   <span class="item-button__index">05</span>
+                </div>
+              
+                <div class="item-button">
+                  <span>jenkins</span>
+                  <span class="item-button__index">06</span>
                 </div>
               </div>
                   </aside>
@@ -446,7 +529,7 @@ body {
 
                       <div class="panel-body">
                         <div class="detail-block">
-                          <p class="panel-copy">My default tool for test automation, quality tooling, scripts and the practical glue that keeps delivery moving.</p>
+                          <p class="panel-copy">My default tool for test automation, quality tooling, scripts and the practical glue that keeps delivery moving. Mainly using it with the behave BDD framework, but also for more general-purpose work.</p>
                           <ul class="panel-bullets"><li>Automation frameworks and reusable tooling</li><li>Test infrastructure and diagnostics</li><li>Fast scripting for developer workflows</li></ul>
                         </div>
                       </div>
@@ -455,9 +538,9 @@ body {
                 </main>
 
                 <section class="dock">
-                  <div>
-                    <p class="eyebrow">signals</p>
-                    <div class="signal-cards">
+                    <div>
+                      <p class="eyebrow">signals</p>
+                      <div class="signal-cards" style="--signal-count:4">
                 <article class="signal-card">
                   <strong>5+</strong>
                   <span>years in QA</span>
@@ -478,7 +561,7 @@ body {
                   <span>focus</span>
                 </article>
               </div>
-                  </div>
+                    </div>
 
                   <div>
                     <p class="eyebrow">links</p>
@@ -487,7 +570,7 @@ body {
                 </section>
 
                 <footer class="footer">
-                  <span>private interactive source / public static view</span>
+                  <span>made with ❤</span>
                   <span class="footer-separator">/</span>
                   <span>static view generated from shared data</span>
                 </footer>
