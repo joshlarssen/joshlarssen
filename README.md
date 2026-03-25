@@ -5,5 +5,9 @@
 </p>
 
 <p align="center">
-  <img src="./assets/profile-static.svg" alt="Retro terminal inspired profile screen for Denis Mahmutovic" width="92%" />
+  <img src="./assets/profile-teaser.gif" alt="Animated retro terminal teaser for Denis Mahmutovic" width="92%" />
+</p>
+
+<p align="center">
+  <img src="./assets/profile-static.svg" alt="Text-only retro terminal profile for Denis Mahmutovic" width="92%" />
 </p>

@@ -236,309 +236,13 @@ body {
 }
 
 .panel-body {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 28px;
-  align-items: flex-start;
   margin-top: 28px;
-}
-
-.signal-block {
-  display: grid;
-  gap: 14px;
-  justify-items: center;
-}
-
-.signal-visual-slot {
-  width: 100%;
-  min-height: 320px;
-  display: grid;
-  place-items: center;
-}
-
-.signal-visual {
-  width: 100%;
-  display: grid;
-  place-items: center;
-}
-
-.signal-radar {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 2px solid var(--text-strong);
-  box-shadow: inset 0 0 0 1px rgba(109, 255, 85, 0.14);
-}
-
-.signal-ring,
-.signal-cross,
-.signal-core {
-  position: absolute;
-}
-
-.signal-ring {
-  inset: 26px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-}
-
-.signal-ring--inner {
-  inset: 56px;
-}
-
-.signal-cross--x,
-.signal-cross--y {
-  background: var(--line-soft);
-}
-
-.signal-cross--x {
-  top: calc(50% - 1px);
-  left: 12px;
-  right: 12px;
-  height: 2px;
-}
-
-.signal-cross--y {
-  left: calc(50% - 1px);
-  top: 12px;
-  bottom: 12px;
-  width: 2px;
-}
-
-.signal-core {
-  inset: 50%;
-  width: 88px;
-  height: 88px;
-  margin: -44px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 2px solid var(--text-strong);
-  color: var(--text-strong);
-  font-size: 2.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  box-shadow: 0 0 24px rgba(102, 255, 68, 0.14);
-}
-
-.signal-label {
-  padding: 8px 12px;
-  border: 1px solid var(--line);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--text-strong);
-}
-
-.schematic-board {
-  width: 240px;
-  padding: 16px;
-  border: 1px solid var(--line);
-  background:
-    linear-gradient(180deg, rgba(12, 27, 13, 0.9), rgba(5, 12, 6, 0.98)),
-    radial-gradient(circle at top, rgba(109, 255, 85, 0.14), transparent 52%);
-  box-shadow: inset 0 0 0 1px var(--surface-glow), 0 0 24px rgba(109, 255, 85, 0.08);
-}
-
-.schematic-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.schematic-chip {
-  color: var(--text-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.72rem;
-}
-
-.schematic-badge {
-  min-width: 54px;
-  height: 38px;
-  padding: 0 10px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line);
-  color: var(--text-strong);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-}
-
-.schematic-canvas {
-  position: relative;
-  height: 156px;
-  overflow: hidden;
-  border: 1px solid var(--line-soft);
-  background: linear-gradient(180deg, rgba(13, 29, 14, 0.72), rgba(4, 10, 5, 0.94));
-}
-
-.schematic-grid {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(109, 255, 85, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(109, 255, 85, 0.07) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.55;
-}
-
-.schematic-sweep {
-  position: absolute;
-  inset: -20% auto -20% 62%;
-  width: 90px;
-  transform: rotate(18deg);
-  background: linear-gradient(180deg, transparent, rgba(109, 255, 85, 0.12), transparent);
-}
-
-.schematic-network,
-.schematic-line,
-.schematic-node,
-.schematic-pulse {
-  position: absolute;
-}
-
-.schematic-network {
-  inset: 0;
-}
-
-.schematic-line {
-  background: linear-gradient(180deg, rgba(109, 255, 85, 0.18), rgba(109, 255, 85, 0.85), rgba(109, 255, 85, 0.18));
-  box-shadow: 0 0 12px rgba(109, 255, 85, 0.16);
-}
-
-.schematic-line--vertical {
-  left: calc(50% - 1px);
-  top: 18px;
-  bottom: 18px;
-  width: 2px;
-}
-
-.schematic-line--horizontal {
-  top: calc(50% - 1px);
-  left: 18px;
-  right: 18px;
-  height: 2px;
-}
-
-.schematic-node {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 2px solid var(--text-strong);
-  background: rgba(4, 16, 6, 0.92);
-  box-shadow: 0 0 16px rgba(109, 255, 85, 0.18);
-}
-
-.schematic-node--top {
-  left: calc(50% - 6px);
-  top: 12px;
-}
-
-.schematic-node--right {
-  right: 12px;
-  top: calc(50% - 6px);
-}
-
-.schematic-node--bottom {
-  left: calc(50% - 6px);
-  bottom: 12px;
-}
-
-.schematic-node--left {
-  left: 12px;
-  top: calc(50% - 6px);
-}
-
-.schematic-pulse {
-  left: 18px;
-  right: 18px;
-  top: 50%;
-  height: 2px;
-  transform: translateY(-50%);
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    transparent 18%,
-    rgba(109, 255, 85, 0.45) 18%,
-    rgba(109, 255, 85, 0.45) 28%,
-    rgba(109, 255, 85, 0.95) 33%,
-    rgba(109, 255, 85, 0.18) 38%,
-    rgba(109, 255, 85, 0.18) 62%,
-    rgba(109, 255, 85, 0.95) 68%,
-    rgba(109, 255, 85, 0.45) 74%,
-    transparent 82%,
-    transparent 100%
-  );
-}
-
-.schematic-core-panel {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 94px;
-  transform: translate(-50%, -50%);
-  padding: 10px 8px;
-  border: 1px solid var(--line);
-  background: rgba(7, 18, 8, 0.92);
-  box-shadow: inset 0 0 0 1px var(--surface-glow);
-  text-align: center;
-}
-
-.schematic-core-panel__eyebrow {
-  display: block;
-  color: var(--text-dim);
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.schematic-core-panel__value {
-  display: block;
-  margin-top: 6px;
-  color: var(--text-strong);
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-}
-
-.schematic-stats {
-  display: grid;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.schematic-stat {
-  display: grid;
-  gap: 6px;
-}
-
-.schematic-stat__meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  color: var(--text-dim);
-  font-size: 0.74rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.schematic-stat__track {
-  height: 8px;
-  border: 1px solid var(--line);
-  background: rgba(7, 18, 8, 0.9);
-}
-
-.schematic-stat__fill {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--text-strong), rgba(109, 255, 85, 0.35));
 }
 
 .panel-copy {
   margin: 0;
+  max-width: 52rem;
+  font-size: 1.02rem;
 }
 
 .panel-bullets {
@@ -613,7 +317,6 @@ body {
 @media (max-width: 960px) {
   .topbar,
   .screen,
-  .panel-body,
   .dock {
     display: grid;
     grid-template-columns: 1fr;
@@ -625,10 +328,6 @@ body {
 
   .panel-meta {
     display: grid;
-  }
-
-  .signal-visual-slot {
-    min-height: auto;
   }
 }
 
@@ -643,10 +342,6 @@ body {
   .panel-frame,
   .sidebar {
     padding: 14px;
-  }
-
-  .schematic-board {
-    width: min(100%, 260px);
   }
 }
 
@@ -750,68 +445,6 @@ body {
                       </div>
 
                       <div class="panel-body">
-                        <div class="signal-block">
-                          <div class="signal-visual-slot">
-    <div class="signal-visual signal-visual--schematic">
-      <div class="schematic-board">
-                <div class="schematic-header">
-                  <div class="schematic-chip">systems view</div>
-                  <div class="schematic-badge">PY</div>
-                </div>
-        <div class="schematic-canvas">
-          <div class="schematic-grid"></div>
-          <div class="schematic-sweep"></div>
-          <div class="schematic-network">
-            <div class="schematic-line schematic-line--vertical"></div>
-            <div class="schematic-line schematic-line--horizontal"></div>
-            <div class="schematic-node schematic-node--top"></div>
-            <div class="schematic-node schematic-node--right"></div>
-            <div class="schematic-node schematic-node--bottom"></div>
-            <div class="schematic-node schematic-node--left"></div>
-            <div class="schematic-pulse"></div>
-            <div class="schematic-core-panel">
-              <span class="schematic-core-panel__eyebrow">primary</span>
-              <span class="schematic-core-panel__value">PY</span>
-            </div>
-          </div>
-        </div>
-        <div class="schematic-stats">
-                <article class="schematic-stat">
-                  <div class="schematic-stat__meta">
-                    <span>automation</span>
-                    <span>96%</span>
-                  </div>
-                  <div class="schematic-stat__track">
-                    <span class="schematic-stat__fill" style="width:96%"></span>
-                  </div>
-                </article>
-              
-                <article class="schematic-stat">
-                  <div class="schematic-stat__meta">
-                    <span>tooling</span>
-                    <span>92%</span>
-                  </div>
-                  <div class="schematic-stat__track">
-                    <span class="schematic-stat__fill" style="width:92%"></span>
-                  </div>
-                </article>
-              
-                <article class="schematic-stat">
-                  <div class="schematic-stat__meta">
-                    <span>delivery</span>
-                    <span>88%</span>
-                  </div>
-                  <div class="schematic-stat__track">
-                    <span class="schematic-stat__fill" style="width:88%"></span>
-                  </div>
-                </article>
-              </div>
-      </div>
-    </div>
-          </div>
-                          <div class="signal-label">python profile</div>
-                        </div>
-
                         <div class="detail-block">
                           <p class="panel-copy">My default tool for test automation, quality tooling, scripts and the practical glue that keeps delivery moving.</p>
                           <ul class="panel-bullets"><li>Automation frameworks and reusable tooling</li><li>Test infrastructure and diagnostics</li><li>Fast scripting for developer workflows</li></ul>
