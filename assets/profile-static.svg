@@ -393,131 +393,115 @@ body {
   background: linear-gradient(180deg, transparent, rgba(109, 255, 85, 0.12), transparent);
 }
 
-.schematic-figure {
+.schematic-network,
+.schematic-line,
+.schematic-node,
+.schematic-pulse {
+  position: absolute;
+}
+
+.schematic-network {
+  inset: 0;
+}
+
+.schematic-line {
+  background: linear-gradient(180deg, rgba(109, 255, 85, 0.18), rgba(109, 255, 85, 0.85), rgba(109, 255, 85, 0.18));
+  box-shadow: 0 0 12px rgba(109, 255, 85, 0.16);
+}
+
+.schematic-line--vertical {
+  left: calc(50% - 1px);
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+}
+
+.schematic-line--horizontal {
+  top: calc(50% - 1px);
+  left: 18px;
+  right: 18px;
+  height: 2px;
+}
+
+.schematic-node {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 2px solid var(--text-strong);
+  background: rgba(4, 16, 6, 0.92);
+  box-shadow: 0 0 16px rgba(109, 255, 85, 0.18);
+}
+
+.schematic-node--top {
+  left: calc(50% - 6px);
+  top: 12px;
+}
+
+.schematic-node--right {
+  right: 12px;
+  top: calc(50% - 6px);
+}
+
+.schematic-node--bottom {
+  left: calc(50% - 6px);
+  bottom: 12px;
+}
+
+.schematic-node--left {
+  left: 12px;
+  top: calc(50% - 6px);
+}
+
+.schematic-pulse {
+  left: 18px;
+  right: 18px;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 18%,
+    rgba(109, 255, 85, 0.45) 18%,
+    rgba(109, 255, 85, 0.45) 28%,
+    rgba(109, 255, 85, 0.95) 33%,
+    rgba(109, 255, 85, 0.18) 38%,
+    rgba(109, 255, 85, 0.18) 62%,
+    rgba(109, 255, 85, 0.95) 68%,
+    rgba(109, 255, 85, 0.45) 74%,
+    transparent 82%,
+    transparent 100%
+  );
+}
+
+.schematic-core-panel {
   position: absolute;
   left: 50%;
   top: 50%;
   width: 94px;
-  height: 120px;
-  transform: translate(-50%, -52%);
+  transform: translate(-50%, -50%);
+  padding: 10px 8px;
+  border: 1px solid var(--line);
+  background: rgba(7, 18, 8, 0.92);
+  box-shadow: inset 0 0 0 1px var(--surface-glow);
+  text-align: center;
 }
 
-.schematic-head {
-  position: absolute;
-  left: 30px;
-  top: 0;
-  width: 34px;
-  height: 34px;
-  border: 2px solid var(--text-strong);
-  border-radius: 999px;
+.schematic-core-panel__eyebrow {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
-.schematic-neck {
-  position: absolute;
-  left: 44px;
-  top: 34px;
-  width: 6px;
-  height: 10px;
-  background: var(--text-strong);
-}
-
-.schematic-torso {
-  position: absolute;
-  left: 24px;
-  top: 44px;
-  width: 46px;
-  height: 46px;
-  border: 2px solid var(--text-strong);
-  border-radius: 14px 14px 10px 10px;
-}
-
-.schematic-spine {
-  position: absolute;
-  left: 46px;
-  top: 44px;
-  width: 2px;
-  height: 72px;
-  background: var(--text-strong);
-}
-
-.schematic-arm,
-.schematic-forearm,
-.schematic-leg,
-.schematic-shin {
-  position: absolute;
-  background: var(--text-strong);
-}
-
-.schematic-arm {
-  top: 52px;
-  width: 30px;
-  height: 2px;
-}
-
-.schematic-arm--left {
-  left: -2px;
-  transform: rotate(20deg);
-  transform-origin: right center;
-}
-
-.schematic-arm--right {
-  right: -2px;
-  transform: rotate(-20deg);
-  transform-origin: left center;
-}
-
-.schematic-forearm {
-  top: 66px;
-  width: 26px;
-  height: 2px;
-}
-
-.schematic-forearm--left {
-  left: -8px;
-  transform: rotate(-18deg);
-  transform-origin: right center;
-}
-
-.schematic-forearm--right {
-  right: -8px;
-  transform: rotate(18deg);
-  transform-origin: left center;
-}
-
-.schematic-leg {
-  top: 96px;
-  width: 2px;
-  height: 26px;
-}
-
-.schematic-leg--left {
-  left: 38px;
-  transform: rotate(12deg);
-  transform-origin: top center;
-}
-
-.schematic-leg--right {
-  right: 38px;
-  transform: rotate(-12deg);
-  transform-origin: top center;
-}
-
-.schematic-shin {
-  top: 118px;
-  width: 2px;
-  height: 20px;
-}
-
-.schematic-shin--left {
-  left: 34px;
-  transform: rotate(-10deg);
-  transform-origin: top center;
-}
-
-.schematic-shin--right {
-  right: 34px;
-  transform: rotate(10deg);
-  transform-origin: top center;
+.schematic-core-panel__value {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-strong);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
 }
 
 .schematic-stats {
@@ -768,31 +752,30 @@ body {
                       <div class="panel-body">
                         <div class="signal-block">
                           <div class="signal-visual-slot">
-            <div class="signal-visual signal-visual--schematic">
-              <div class="schematic-board">
+    <div class="signal-visual signal-visual--schematic">
+      <div class="schematic-board">
                 <div class="schematic-header">
-                  <div class="schematic-chip">skill matrix</div>
+                  <div class="schematic-chip">systems view</div>
                   <div class="schematic-badge">PY</div>
                 </div>
-                <div class="schematic-canvas">
-                  <div class="schematic-grid"></div>
-                  <div class="schematic-sweep"></div>
-                  <div class="schematic-figure">
-                    <div class="schematic-head"></div>
-                    <div class="schematic-neck"></div>
-                    <div class="schematic-torso"></div>
-                    <div class="schematic-spine"></div>
-                    <div class="schematic-arm schematic-arm--left"></div>
-                    <div class="schematic-arm schematic-arm--right"></div>
-                    <div class="schematic-forearm schematic-forearm--left"></div>
-                    <div class="schematic-forearm schematic-forearm--right"></div>
-                    <div class="schematic-leg schematic-leg--left"></div>
-                    <div class="schematic-leg schematic-leg--right"></div>
-                    <div class="schematic-shin schematic-shin--left"></div>
-                    <div class="schematic-shin schematic-shin--right"></div>
-                  </div>
-                </div>
-                <div class="schematic-stats">
+        <div class="schematic-canvas">
+          <div class="schematic-grid"></div>
+          <div class="schematic-sweep"></div>
+          <div class="schematic-network">
+            <div class="schematic-line schematic-line--vertical"></div>
+            <div class="schematic-line schematic-line--horizontal"></div>
+            <div class="schematic-node schematic-node--top"></div>
+            <div class="schematic-node schematic-node--right"></div>
+            <div class="schematic-node schematic-node--bottom"></div>
+            <div class="schematic-node schematic-node--left"></div>
+            <div class="schematic-pulse"></div>
+            <div class="schematic-core-panel">
+              <span class="schematic-core-panel__eyebrow">primary</span>
+              <span class="schematic-core-panel__value">PY</span>
+            </div>
+          </div>
+        </div>
+        <div class="schematic-stats">
                 <article class="schematic-stat">
                   <div class="schematic-stat__meta">
                     <span>automation</span>
@@ -823,8 +806,8 @@ body {
                   </div>
                 </article>
               </div>
-              </div>
-            </div>
+      </div>
+    </div>
           </div>
                           <div class="signal-label">python profile</div>
                         </div>
