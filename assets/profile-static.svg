@@ -279,6 +279,49 @@ body {
   font-size: 1.02rem;
 }
 
+.panel-links[hidden] {
+  display: none;
+}
+
+.panel-link-card {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--line-soft);
+  background: rgba(8, 18, 8, 0.72);
+}
+
+.panel-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 14px;
+}
+
+.panel-link-key {
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+}
+
+.panel-link-value,
+.panel-link-anchor {
+  color: var(--text-strong);
+  word-break: break-word;
+}
+
+.panel-link-anchor {
+  text-decoration: none;
+}
+
+.panel-link-anchor:hover,
+.panel-link-anchor:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
 .detail-block {
   height: 100%;
   overflow-y: auto;
@@ -530,6 +573,7 @@ body {
                       <div class="panel-body">
                         <div class="detail-block">
                           <p class="panel-copy">My default tool for test automation, quality tooling, scripts and the practical glue that keeps delivery moving. Mainly using it with the behave BDD framework, but also for more general-purpose work.</p>
+                          
                           <ul class="panel-bullets"><li>Automation frameworks and reusable tooling</li><li>Test infrastructure and diagnostics</li><li>Fast scripting for developer workflows</li></ul>
                         </div>
                       </div>
