@@ -284,38 +284,31 @@ body {
   margin-top: 18px;
 }
 
-.panel-link-stack {
-  display: grid;
+.panel-link-line,
+.panel-link-anchor {
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
-.panel-link-row {
-  display: grid;
-  gap: 4px;
-}
-
-.panel-link-key {
-  color: var(--text-faint);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.72rem;
-}
-
 .panel-link-value,
-.panel-link-anchor {
+.panel-link-anchor,
+.link-pill__meta {
   color: var(--text-strong);
   word-break: break-word;
-  font-size: 1rem;
-}
-
-.panel-link-anchor {
-  text-decoration: none;
 }
 
 .panel-link-anchor:hover,
 .panel-link-anchor:focus-visible {
   text-decoration: underline;
   outline: none;
+}
+
+.social-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  color: var(--text-dim);
 }
 
 .detail-block {
@@ -375,8 +368,9 @@ body {
 }
 
 .link-pill {
-  display: grid;
-  gap: 3px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 0;
   border: none;
   background: transparent;
@@ -391,15 +385,8 @@ body {
   outline: none;
 }
 
-.link-pill__title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
 .link-pill__meta {
-  color: var(--text-dim);
-  font-size: 0.84rem;
+  font-size: 0.92rem;
   word-break: break-word;
 }
 
@@ -512,7 +499,7 @@ body {
           <rect x="28" y="28" width="1144" height="884" rx="14" fill="url(#scan)" opacity="0.85" />
 
           <foreignObject x="32" y="32" width="1136" height="876">
-            <div xmlns="http://www.w3.org/1999/xhtml" class="page" style="--bg-start:#030603;--bg-end:#050b05;--panel:rgba(7, 19, 9, 0.94);--line:#2f9134;--line-soft:rgba(76, 180, 80, 0.22);--text:#9dff7b;--text-strong:#6dff55;--text-dim:#62c964;--text-faint:#2f6a33;--shadow:rgba(57, 255, 20, 0.18)">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="page" style="--bg-start:#02070b;--bg-end:#051018;--panel:rgba(7, 18, 26, 0.94);--line:#2e88a6;--line-soft:rgba(77, 172, 207, 0.2);--text:#a7f3ff;--text-strong:#6de7ff;--text-dim:#67bdd0;--text-faint:#2d6170;--shadow:rgba(109, 231, 255, 0.18)">
               <div class="shell">
                 <header class="topbar">
                   <div class="brand">
@@ -617,7 +604,15 @@ body {
 
                   <div>
                     <p class="eyebrow">links</p>
-                    <div class="link-pills"><div class="link-pill"><strong class="link-pill__title">GitHub</strong><span class="link-pill__meta">github.com/joshlarssen</span></div><div class="link-pill"><strong class="link-pill__title">Profile README</strong><span class="link-pill__meta">github.com/joshlarssen/joshlarssen</span></div></div>
+                    <div class="link-pills"><div class="link-pill">
+    <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+    </svg>
+  <span class="link-pill__meta">github.com/joshlarssen</span></div><div class="link-pill">
+    <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+    </svg>
+  <span class="link-pill__meta">github.com/joshlarssen/joshlarssen</span></div></div>
                   </div>
                 </section>
 
