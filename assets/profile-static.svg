@@ -144,8 +144,7 @@ body {
 }
 
 .tab-button,
-.item-button,
-.link-pill {
+.item-button {
   border: 1px solid var(--line);
   background: rgba(7, 18, 8, 0.9);
   color: var(--text);
@@ -168,9 +167,7 @@ body {
 .tab-button.is-active,
 .item-button:hover,
 .item-button:focus-visible,
-.item-button.is-active,
-.link-pill:hover,
-.link-pill:focus-visible {
+.item-button.is-active {
   background: var(--text-strong);
   color: #041006;
   box-shadow: 0 0 18px rgba(102, 255, 68, 0.26);
@@ -283,33 +280,18 @@ body {
   display: none;
 }
 
-.panel-link-card {
-  display: grid;
-  gap: 10px;
+.panel-links {
   margin-top: 18px;
-  padding: 14px 16px;
-  border: 1px solid var(--line-soft);
-  background: rgba(8, 18, 8, 0.72);
 }
 
-.panel-link-header {
-  display: flex;
-  align-items: center;
+.panel-link-stack {
+  display: grid;
   gap: 12px;
 }
 
-.panel-link-title {
-  color: var(--text-strong);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.86rem;
-}
-
 .panel-link-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 10px 14px;
+  display: grid;
+  gap: 4px;
 }
 
 .panel-link-key {
@@ -323,6 +305,7 @@ body {
 .panel-link-anchor {
   color: var(--text-strong);
   word-break: break-word;
+  font-size: 1rem;
 }
 
 .panel-link-anchor {
@@ -333,23 +316,6 @@ body {
 .panel-link-anchor:focus-visible {
   text-decoration: underline;
   outline: none;
-}
-
-.link-icon {
-  min-width: 2.3rem;
-  height: 2.3rem;
-  display: inline-grid;
-  place-items: center;
-  padding: 0 0.45rem;
-  border: 1px solid var(--line);
-  border-radius: 0.45rem;
-  background: rgba(7, 18, 8, 0.9);
-  color: var(--text-strong);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  line-height: 1;
-  box-shadow: inset 0 0 0 1px var(--surface-glow);
 }
 
 .detail-block {
@@ -403,30 +369,38 @@ body {
 }
 
 .link-pills {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 10px;
+  display: grid;
+  gap: 12px;
   margin-top: 12px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.link-pills::-webkit-scrollbar {
-  display: none;
 }
 
 .link-pill {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
+  display: grid;
+  gap: 3px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-strong);
+  text-decoration: none;
+  box-shadow: none;
 }
 
-.link-pill__label {
-  white-space: nowrap;
+.link-pill:hover,
+.link-pill:focus-visible {
+  color: var(--text);
+  outline: none;
+}
+
+.link-pill__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.link-pill__meta {
+  color: var(--text-dim);
+  font-size: 0.84rem;
+  word-break: break-word;
 }
 
 .footer {
@@ -643,7 +617,7 @@ body {
 
                   <div>
                     <p class="eyebrow">links</p>
-                    <div class="link-pills"><div class="link-pill"><span class="link-icon" data-icon-key="github" aria-hidden="true">GH</span><span class="link-pill__label">GitHub</span></div><div class="link-pill"><span class="link-icon" data-icon-key="readme" aria-hidden="true">RD</span><span class="link-pill__label">Profile README</span></div></div>
+                    <div class="link-pills"><div class="link-pill"><strong class="link-pill__title">GitHub</strong><span class="link-pill__meta">github.com/joshlarssen</span></div><div class="link-pill"><strong class="link-pill__title">Profile README</strong><span class="link-pill__meta">github.com/joshlarssen/joshlarssen</span></div></div>
                   </div>
                 </section>
 
